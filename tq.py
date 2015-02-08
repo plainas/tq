@@ -1,5 +1,15 @@
 #!/usr/bin/python3
 
+
+"""
+Test non unicode input with:
+curl https://www.flashback.org/| ./tq.py -Jt ".td_forum"
+
+Test unicode input
+curl https://news.ycombinator.com/news| ./tq.py -Jt ".title a"
+
+"""
+
 import sys
 from bs4 import BeautifulSoup
 import argparse
@@ -16,6 +26,7 @@ args = parser.parse_args()
 
 def get_els(css_selector):
     #char_stream = codecs.getreader("utf-8")(sys.stdin)
+    #TODO:try this instead: unicode(value, "utf-8", errors="ignore")
     char_stream = sys.stdin
     input_text = char_stream.read()
     soup = BeautifulSoup(input_text)
