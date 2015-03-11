@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import io
+
 
 """
 Test non unicode input with:
@@ -25,11 +27,9 @@ parser.add_argument("-J", "--json_trimmed", action="store_true", help="same as -
 args = parser.parse_args()
 
 def get_els(css_selector):
-    #char_stream = codecs.getreader("utf-8")(sys.stdin)
-    #TODO:try this instead: unicode(value, "utf-8", errors="ignore")
-    char_stream = sys.stdin
-    input_text = char_stream.read()
-    soup = BeautifulSoup(input_text)
+    #input_stream = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8', errors='ignore')
+    input_stream = io.TextIOWrapper(sys.stdin.buffer, errors='ignore')
+    soup = BeautifulSoup(input_stream)
     return soup.select(css_selector)
 
 selected_els = get_els(args.selector)
