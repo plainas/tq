@@ -12,12 +12,16 @@ curl https://www.flashback.org/t2494391| ./tq.py -j ".post_message"
 
 """
 
+#TODO: use add_mutually_exclusive_group()
+
 import sys
 from bs4 import BeautifulSoup
 import argparse
 import json
 import codecs
 import io
+
+version = "0.0.1"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("selector", help="A css selector")
@@ -26,10 +30,13 @@ parser.add_argument("-q", "--squash",		action="store_true", help="Squash lines."
 parser.add_argument("-s", "--squash-space",	action="store_true", help="Squash spaces.")
 parser.add_argument("-j", "--json-lines",	action="store_true", help="JSON encode each match.")
 parser.add_argument("-J", "--json",			action="store_true", help="Output as json array of strings.")
+parser.add_argument("-v", "--version",		action="store_true", help=version)
 
 args = parser.parse_args()
 
-print
+if args.version:
+	print(version)
+	system.exit()
 
 if not args.selector:
     system.exit("ERROR! No selector")
