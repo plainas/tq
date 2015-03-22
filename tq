@@ -13,6 +13,9 @@ curl https://www.flashback.org/t2494391| ./tq.py -j ".post_message"
 """
 
 #TODO: use add_mutually_exclusive_group()
+#TODO: override usage so it can be picked up by help2man "Usage:" instead of 'usage'
+#see https://docs.python.org/dev/library/argparse.html#usage
+
 
 import sys
 from bs4 import BeautifulSoup
@@ -23,7 +26,7 @@ import io
 
 version = "0.0.1"
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.")
 parser.add_argument("selector", help="A css selector")
 parser.add_argument("-t", "--text",			action="store_true", help="Outputs only the inner text of the selected elements.")
 parser.add_argument("-q", "--squash",		action="store_true", help="Squash lines.")
