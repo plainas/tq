@@ -13,8 +13,9 @@ curl https://www.flashback.org/t2494391| ./tq.py -j ".post_message"
 """
 
 #TODO: use add_mutually_exclusive_group()
-#TODO: override usage so it can be picked up by help2man "Usage:" instead of 'usage'
-#see https://docs.python.org/dev/library/argparse.html#usage
+#TODO: help2man proved ineficient. Copy and import this script and use it. Instructions are in the source, pretty straight forward
+
+#https://github.com/pwman3/pwman3/blob/d718a01fa8038893e42416b59cdfcda3935fe878/build_manpage.py
 
 
 import sys
@@ -26,7 +27,8 @@ import io
 
 version = "0.0.1"
 
-parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.")
+#parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "TQ", usage='curl url | tq [options]')
+parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "TQ")
 parser.add_argument("selector", help="A css selector")
 parser.add_argument("-t", "--text",			action="store_true", help="Outputs only the inner text of the selected elements.")
 parser.add_argument("-q", "--squash",		action="store_true", help="Squash lines.")
@@ -51,7 +53,7 @@ if args.json and args.json_lines:
 def get_els(css_selector):
     #input_stream = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8', errors='ignore')
     input_stream = io.TextIOWrapper(sys.stdin.buffer, errors='ignore')
-    soup = BeautifulSoup(input_stream)
+    soup = BeautifulSoup(input_stream, "html.parser")
     return soup.select(css_selector)
 
 
