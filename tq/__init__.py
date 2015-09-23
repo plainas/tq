@@ -45,10 +45,7 @@ def get_parser(formatter_class=argparse.HelpFormatter):
 
 
 
-def main(args):
-
-    print("FOOOO")
-    exit()
+def main():
 
     if args.version:
     	print(version)

@@ -33,6 +33,18 @@ Perform a css query with SELECTOR on an html document passed to the standard inp
     Prints tq version
 
 
+## EXAMPLES
+
+
+### Get headlines from hacker news
+
+curl https://news.ycombinator.com/news | tq -tj ".title a"
+
+### Download a gallery of nice forest pictures from flickr
+
+curl -s 'https://www.flickr.com/photos/tgerus/galleries/72157622468645106/' | tq  ".gallery-photos img"
+
+
 ## AUTHORS
 
 `tq` was written by Pedro <pedro@example.com>.
