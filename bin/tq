@@ -1,0 +1,4 @@
+import tq
+
+if __name__ == '__main__':
+    tq.main()

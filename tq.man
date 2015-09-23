@@ -1,0 +1,22 @@
+.TH tq 1 2015\-09\-23
+.SH SYNOPSIS
+ \fBtq\fR [-h] [-t] [-q] [-s] [-j] [-J] [-v] selector
+
+
+.SH DESCRIPTION
+UNKNOWN
+.SH OPTIONS
+  selector            A css selector
+
+  -h, --help          show this help message and exit
+  -t, --text          Outputs only the inner text of the selected elements.
+  -q, --squash        Squash lines.
+  -s, --squash-space  Squash spaces.
+  -j, --json-lines    JSON encode each match.
+  -J, --json          Output as json array of strings.
+  -v, --version       0.0.1
+.SH AUTHORS
+ pwman3 was originally written by Ivan Kelly <ivan@ivankelly.net>.
+ pwman3 is now maintained by Oz Nahum <nahumoz@gmail.com>.
+.SH DISTRIBUTION
+ The latest version of tq may be downloaded from https://github.com/plainas/tq
