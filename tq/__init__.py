@@ -76,7 +76,7 @@ def main():
     if args.squash_space:
         selected_els = [' '.join( el.split(' ') ) for el in selected_els]
 
-    if args.json or args.json_lines:
+    if args.json_lines:
         selected_els = [json.dumps(str(el_text)) for el_text in selected_els]
 
 
