@@ -1,0 +1,55 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "TQ" "1" "September 2015" "" ""
+.
+.SH "NAME"
+\fBtq\fR \- Terminal based HTML query tool
+.
+.SH "SYNOPSIS"
+cat file\.html | \fBtq\fR [\fIoptions\fR] SELECTOR
+.
+.SH "DESCRIPTION"
+Perform a css query with SELECTOR on an html document passed to the standard input\.
+.
+.SH "OPTIONS"
+.
+.IP "\(bu" 4
+\fBselector\fR A css selector
+.
+.IP "\(bu" 4
+\fB\-t, \-\-text\fR Outputs only the inner text of the selected elements\.
+.
+.IP "\(bu" 4
+\fB\-q, \-\-squash\fR Squash lines\.
+.
+.IP "\(bu" 4
+\fB\-s, \-\-squash\-space\fR Squash spaces\.
+.
+.IP "\(bu" 4
+\fB\-j, \-\-json\-lines\fR JSON encode each match\.
+.
+.IP "\(bu" 4
+\fB\-J, \-\-json\fR Output as json array of strings\.
+.
+.IP "\(bu" 4
+\fB\-v, \-\-version\fR Prints tq version
+.
+.IP "" 0
+.
+.SH "EXAMPLES"
+.
+.SS "Get headlines from hacker news"
+curl https://news\.ycombinator\.com/news | tq \-tj "\.title a"
+.
+.SS "Download a gallery of nice forest pictures from flickr"
+curl \-s \'https://www\.flickr\.com/photos/tgerus/galleries/72157622468645106/\' | tq "\.gallery\-photos img"
+.
+.SH "AUTHORS"
+\fBtq\fR was written by Pedro \fIpedro@example\.com\fR\.
+.
+.SH "DISTRIBUTION"
+The latest version of tq may be downloaded from https://github\.com/plainas/tq
+.
+.SH "SEE ALSO"
+curl(1), wget(1), jq(1)
