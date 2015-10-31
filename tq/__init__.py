@@ -32,7 +32,8 @@ parser.add_argument("-q", "--squash",		action="store_true", help="Squash lines."
 parser.add_argument("-s", "--squash-space",	action="store_true", help="Squash spaces.")
 parser.add_argument("-j", "--json-lines",	action="store_true", help="JSON encode each match.")
 parser.add_argument("-J", "--json",			action="store_true", help="Output as json array of strings.")
-parser.add_argument("-v", "--version",		action="store_true", help=version)
+parser.add_argument("-v", "--version",		action="store_true", help="Ouputs tq version")
+parser.add_argument("-a", "--attr",                              help="Ouputs only te contents of given HTML attribute of selected elements")
 
 args = parser.parse_args()
 
@@ -42,7 +43,6 @@ def get_parser(formatter_class=argparse.HelpFormatter):
     this is here just to be picked up by build_manpage
     """
     return parser
-
 
 
 def main():
@@ -64,17 +64,22 @@ def main():
         soup = BeautifulSoup(input_stream, "html.parser")
         return soup.select(css_selector)
 
-
     selected_els = get_els(args.selector)
+
+
+    if args.attr:
+        selected_els = [el.get(args.attr) for el in selected_els if args.attr in el.attrs]
 
     if args.text:
         selected_els = [el.get_text() for el in selected_els]
 
     if args.squash:
-        selected_els = [el.replace('\n', ' ').el('\r', '') for el in selected_els]
-    	
+        selected_els = [el.replace('\n', ' ').replace('\r', '') for el in selected_els]
+
     if args.squash_space:
-        selected_els = [' '.join( el.split(' ') ) for el in selected_els]
+        selected_els = [el.replace('\t', ' ') for el in selected_els]
+        selected_els = [' '.join( el.split(' ')) for el in selected_els]
+
 
     if args.json or args.json_lines:
         selected_els = [json.dumps(str(el_text)) for el_text in selected_els]
