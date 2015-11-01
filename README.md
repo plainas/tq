@@ -33,7 +33,7 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
 
 ## Command options
 
-  * `selector`
+  * `SELECTOR`
     A css selector
 
 	* `-a ATTRIBUTE --attr=ATTRIBUTE`
