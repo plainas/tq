@@ -11,24 +11,27 @@ Perform a css query with SELECTOR on an html document passed to the standard inp
 
 ## OPTIONS
 
-  * `selector`
+  * _SELECTOR_
     A css selector
+
+  * `-a `_ATTRIBUTE_` --attr=`_ATTRIBUTE_
+  	  Outputs only the contents of the html ATTRIBUTE.
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
-  
+
   * `-q, --squash`
     Squash lines.
-  
+
   * `-s, --squash-space`
     Squash spaces.
-  
+
   * `-j, --json-lines`
     JSON encode each match.
-  
+
   * `-J, --json`
     Output as json array of strings.
-  
+
   * `-v, --version`
     Prints tq version
 

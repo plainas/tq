@@ -36,20 +36,23 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
   * `selector`
     A css selector
 
+	* `-a ATTRIBUTE --attr=ATTRIBUTE`
+	  Outputs only the contents of the html ATTRIBUTE.
+
   * `-t, --text`
     Outputs only the inner text of the selected elements.
-  
+
   * `-q, --squash`
     Squash lines.
-  
+
   * `-s, --squash-space`
     Squash spaces.
-  
+
   * `-j, --json-lines`
     JSON encode each match.
-  
+
   * `-J, --json`
     Output as json array of strings.
-  
+
   * `-v, --version`
     Prints tq version
