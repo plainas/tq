@@ -4,7 +4,7 @@ tq is command line utility  that performs performs an HTML element selection on 
 
 Since input comes from stdin and output is sent to stout. It can easily be be used inside traditional UNIX pipelines to extract content from webpages and html files.
 
-tq provides extra formating options such as json-encoding or newlines squashing, so it can pley nicely with everyones favourite command line tooling.
+tq provides extra formating options such as json-encoding or newlines squashing, so it can play nicely with everyones favourite command line tooling.
 
 
 ## Instalation
@@ -24,7 +24,7 @@ Get the title of an html document stored in a file
 
 Get all the images from a webpage
 
-	TODO: add this example
+	curl -s 'http://example.com/' | tq  "img" -a src | wget -i
 
 
 Notice that tq doesn't provide a way to make http requests or read files. You can use your favorite HTTP client, or provide the html source from any source you want.
