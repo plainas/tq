@@ -3,17 +3,13 @@ Test non unicode input with:
 curl https://www.flashback.org/| ./tq.py -Jt ".td_forum"
 
 Test unicode input
-curl https://news.ycombinator.com/news| ./tq.py -Jt ".title a"
+curl https://news.ycombinator.com/news | ./tq.py -Jt ".title a"
 
-curl https://www.flashback.org/t2494391| ./tq.py -j ".post_message"
+curl https://www.flashback.org/t2494391 | ./tq.py -j ".post_message"
 
 """
 
 #TODO: use add_mutually_exclusive_group()
-#TODO: help2man proved ineficient. Copy and import this script and use it. Instructions are in the source, pretty straight forward
-
-#https://github.com/pwman3/pwman3/blob/d718a01fa8038893e42416b59cdfcda3935fe878/build_manpage.py
-
 
 import sys
 from bs4 import BeautifulSoup
@@ -22,9 +18,9 @@ import json
 import codecs
 import io
 
-version = "0.0.1"
+version = "0.1.0"
 
-#parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "TQ", usage='curl url | tq [options]')
+
 parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "tq")
 parser.add_argument("selector", help="A css selector")
 parser.add_argument("-t", "--text",			action="store_true", help="Outputs only the inner text of the selected elements.")
@@ -36,14 +32,6 @@ parser.add_argument("-v", "--version",		action="store_true", help="Ouputs tq ver
 parser.add_argument("-a", "--attr",                              help="Ouputs only te contents of given HTML attribute of selected elements")
 
 args = parser.parse_args()
-
-
-def get_parser(formatter_class=argparse.HelpFormatter):
-    """
-    this is here just to be picked up by build_manpage
-    """
-    return parser
-
 
 def main():
 

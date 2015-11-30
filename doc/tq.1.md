@@ -45,12 +45,14 @@ curl https://news.ycombinator.com/news | tq -tj ".title a"
 
 ### Download a gallery of nice forest pictures from flickr
 
-curl -s 'https://www.flickr.com/photos/tgerus/galleries/72157622468645106/' | tq  ".gallery-photos img"
+    curl -s 'https://www.flickr.com/photos/tgerus/galleries/72157622468645106/' \
+        | tq  " .pc_img" -a src  \
+        | wget -i
 
 
 ## AUTHORS
 
-`tq` was written by Pedro <pedro@example.com>.
+`tq` was written by Pedro <pedroghcode@gmail.com>.
 
 ## DISTRIBUTION
 The latest version of tq may be downloaded from https://github.com/plainas/tq

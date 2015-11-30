@@ -46,10 +46,17 @@ Perform a css query with SELECTOR on an html document passed to the standard inp
 curl https://news\.ycombinator\.com/news | tq \-tj "\.title a"
 .
 .SS "Download a gallery of nice forest pictures from flickr"
-curl \-s \'https://www\.flickr\.com/photos/tgerus/galleries/72157622468645106/\' | tq "\.gallery\-photos img"
+.
+.nf
+
+curl \-s \'https://www\.flickr\.com/photos/tgerus/galleries/72157622468645106/\' \e
+    | tq  " \.pc_img" \-a src  \e
+    | wget \-i
+.
+.fi
 .
 .SH "AUTHORS"
-\fBtq\fR was written by Pedro \fIpedro@example\.com\fR\.
+\fBtq\fR was written by Pedro \fIpedroghcode@gmail\.com\fR\.
 .
 .SH "DISTRIBUTION"
 The latest version of tq may be downloaded from https://github\.com/plainas/tq

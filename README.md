@@ -36,8 +36,8 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
   * `SELECTOR`
     A css selector
 
-	* `-a ATTRIBUTE --attr=ATTRIBUTE`
-	  Outputs only the contents of the html ATTRIBUTE.
+  * `-a ATTRIBUTE --attr=ATTRIBUTE`
+    Outputs only the contents of the html ATTRIBUTE.
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.

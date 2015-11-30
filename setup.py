@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='tq',
-    version='0.1',
+    version='0.1.0',
     description='comand line css selector',
     author='Pedro',
     author_email='pedro@example.com',
