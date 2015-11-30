@@ -17,7 +17,6 @@ import argparse
 import json
 import codecs
 import io
-import system
 
 version = "0.1.0"
 
@@ -37,8 +36,8 @@ args = parser.parse_args()
 def main():
 
     if args.version:
-    	print(version)
-    	system.exit()
+        print(version)
+        sys.exit(0)
 
     if not args.selector:
         system.exit("ERROR! No selector")
