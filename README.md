@@ -7,7 +7,7 @@ Since input comes from stdin and output is sent to stdout. It can easily be used
 tq provides extra formating options such as json-encoding or newlines squashing, so it can play nicely with everyones favourite command line tooling.
 
 
-## Instalation
+## Installation
 
 	sudo pip install https://github.com/plainas/tq/zipball/stable
 
