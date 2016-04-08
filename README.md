@@ -1,8 +1,8 @@
 # tq
 
-tq is command line utility  that performs performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
+tq is command line utility  that performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
 
-Since input comes from stdin and output is sent to stout. It can easily be be used inside traditional UNIX pipelines to extract content from webpages and html files.
+Since input comes from stdin and output is sent to stdout. It can easily be used inside traditional UNIX pipelines to extract content from webpages and html files.
 
 tq provides extra formating options such as json-encoding or newlines squashing, so it can play nicely with everyones favourite command line tooling.
 
