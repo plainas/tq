@@ -24,7 +24,7 @@ Get the title of an html document stored in a file
 
 Get all the images from a webpage
 
-	curl -s 'http://example.com/' | tq  "img" -a src | wget -i
+	curl -s 'http://example.com/' | tq  "img" -a src | wget -i -
 
 
 Notice that tq doesn't provide a way to make http requests or read files. You can use your favorite HTTP client, or provide the html source from any source you want.
