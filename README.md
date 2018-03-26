@@ -9,6 +9,9 @@ tq provides extra formating options such as json-encoding or newlines squashing,
 
 ## Installation
 
+	# Other versions of html5lib will not work
+	sudo pip3 install --upgrade html5lib==1.0b8
+
 	sudo pip3 install https://github.com/plainas/tq/zipball/stable
 
 ## Example usage
