@@ -9,10 +9,7 @@ tq provides extra formating options such as json-encoding or newlines squashing,
 
 ## Installation
 
-	sudo pip install https://github.com/plainas/tq/zipball/stable
-
-
-**WARNING:** tq requires python3. On some systems, the _pip_ will install python2 packages. In that case, you will need to use _pip3_ instead.
+	sudo pip3 install https://github.com/plainas/tq/zipball/stable
 
 ## Example usage
 
