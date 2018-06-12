@@ -38,14 +38,14 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
   * `SELECTOR`
     A css selector
 
-  * `-p, --parent`
-    Select the PARENTS of the elements selected, instead of the elements themselves.
-
   * `-a ATTRIBUTE --attr=ATTRIBUTE`
     Outputs only the contents of the html ATTRIBUTE.
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
+  
+  * `-p, --parent`
+    Select the parent elements instead.
 
   * `-q, --squash`
     Squash lines.
