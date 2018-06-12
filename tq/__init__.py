@@ -55,7 +55,6 @@ def main():
 
     selected_els = get_els(args.selector)
 
-
     if args.parent:
         selected_els = [el.parent for el in selected_els]
 
@@ -72,10 +71,8 @@ def main():
         selected_els = [el.replace('\t', ' ') for el in selected_els]
         selected_els = [' '.join( el.split(' ')) for el in selected_els]
 
-
     if args.json or args.json_lines:
         selected_els = [json.dumps(str(el_text)) for el_text in selected_els]
-
 
     if args.json:
         sys.stdout.write(json.dumps(selected_els, indent=1))
