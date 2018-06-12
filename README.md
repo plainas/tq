@@ -43,6 +43,9 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
+  
+  * `-p, --parent`
+    Select the parent elements instead.
 
   * `-q, --squash`
     Squash lines.

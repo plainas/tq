@@ -19,6 +19,9 @@ Perform a css query with SELECTOR on an html document passed to the standard inp
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
+  
+  * `-p, --parent`
+    Select the elements instead.
 
   * `-q, --squash`
     Squash lines.
