@@ -14,14 +14,14 @@ Perform a css query with SELECTOR on an html document passed to the standard inp
   * _SELECTOR_
     A css selector
 
-  * `-p, --parent`
-    Select the PARENTS of the elements selected, instead of the elements themselves.
-
   * `-a `_ATTRIBUTE_` --attr=`_ATTRIBUTE_
   	  Outputs only the contents of the html ATTRIBUTE.
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
+  
+  * `-p, --parent`
+    Select the elements instead.
 
   * `-q, --squash`
     Squash lines.
