@@ -1,16 +1,18 @@
 # tq
 
-tq is command line utility  that performs performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
+tq is command line utility  that performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
 
-Since input comes from stdin and output is sent to stout. It can easily be be used inside traditional UNIX pipelines to extract content from webpages and html files.
+Since input comes from stdin and output is sent to stdout. It can easily be used inside traditional UNIX pipelines to extract content from webpages and html files.
 
 tq provides extra formating options such as json-encoding or newlines squashing, so it can play nicely with everyones favourite command line tooling.
 
 
-## Instalation
+## Installation
 
-	sudo pip install https://github.com/plainas/tq/zipball/stable
+	# Other versions of html5lib will not work
+	sudo pip3 install --upgrade html5lib==1.0b8
 
+	sudo pip3 install https://github.com/plainas/tq/zipball/stable
 
 ## Example usage
 
@@ -24,7 +26,7 @@ Get the title of an html document stored in a file
 
 Get all the images from a webpage
 
-	curl -s 'http://example.com/' | tq  "img" -a src | wget -i
+	curl -s 'http://example.com/' | tq  "img" -a src | wget -i -
 
 
 Notice that tq doesn't provide a way to make http requests or read files. You can use your favorite HTTP client, or provide the html source from any source you want.
@@ -41,6 +43,9 @@ For a modern, user friendly http client, check httpie. Or you can just use curl,
 
   * `-t, --text`
     Outputs only the inner text of the selected elements.
+  
+  * `-p, --parent`
+    Select the parent elements instead.
 
   * `-q, --squash`
     Squash lines.

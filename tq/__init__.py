@@ -18,7 +18,7 @@ import json
 import codecs
 import io
 
-version = "0.1.0"
+version = "0.2.0"
 
 
 parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "tq")
@@ -30,6 +30,7 @@ parser.add_argument("-j", "--json-lines",	action="store_true", help="JSON encode
 parser.add_argument("-J", "--json",			action="store_true", help="Output as json array of strings.")
 parser.add_argument("-v", "--version",		action="store_true", help="Ouputs tq version")
 parser.add_argument("-a", "--attr",                              help="Ouputs only te contents of given HTML attribute of selected elements")
+parser.add_argument("-p", "--parent",       action="store_true", help="Select the parents of the elements matching the selector")
 
 args = parser.parse_args()
 
@@ -54,6 +55,8 @@ def main():
 
     selected_els = get_els(args.selector)
 
+    if args.parent:
+        selected_els = [el.parent for el in selected_els]
 
     if args.attr:
         selected_els = [el.get(args.attr) for el in selected_els if args.attr in el.attrs]
@@ -68,10 +71,8 @@ def main():
         selected_els = [el.replace('\t', ' ') for el in selected_els]
         selected_els = [' '.join( el.split(' ')) for el in selected_els]
 
-
     if args.json or args.json_lines:
         selected_els = [json.dumps(str(el_text)) for el_text in selected_els]
-
 
     if args.json:
         sys.stdout.write(json.dumps(selected_els, indent=1))
