@@ -1,11 +1,10 @@
 language: python
 python:
-- "2.7"
 - "3.7"
 cache: pip
 install: pip install pylint -e .
 script:
 - pylint tq/
-- ./tqtest
+- ./tqtest.sh
 notifications:
   email: false
