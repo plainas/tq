@@ -11,6 +11,7 @@ curl https://www.flashback.org/t2494391 | ./tq.py -j ".post_message"
 
 #TODO: use add_mutually_exclusive_group()
 
+from __future__ import print_function  # for compatibility with Python 2
 import sys
 from bs4 import BeautifulSoup
 import argparse
@@ -21,7 +22,7 @@ import io
 version = "0.2.0"
 
 
-parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog= "tq")
+parser = argparse.ArgumentParser(description="Performs a css selection on an HTML document.", prog="tq")
 parser.add_argument("selector", help="A css selector")
 parser.add_argument("-t", "--text",			action="store_true", help="Outputs only the inner text of the selected elements.")
 parser.add_argument("-q", "--squash",		action="store_true", help="Squash lines.")
@@ -41,7 +42,7 @@ def main():
         sys.exit(0)
 
     if not args.selector:
-        system.exit("ERROR! No selector")
+        sys.exit("ERROR! No selector")
 
     if args.json and args.json_lines:
         sys.exit("ERROR! --json and --json-lines options cannot be used simultaniously")
@@ -49,6 +50,7 @@ def main():
 
     def get_els(css_selector):
         #input_stream = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8', errors='ignore')
+        # pylint: disable=no-member
         input_stream = io.TextIOWrapper(sys.stdin.buffer, errors='ignore')
         soup = BeautifulSoup(input_stream, "html.parser")
         return soup.select(css_selector)
@@ -69,7 +71,7 @@ def main():
 
     if args.squash_space:
         selected_els = [el.replace('\t', ' ') for el in selected_els]
-        selected_els = [' '.join( el.split(' ')) for el in selected_els]
+        selected_els = [' '.join(el.split(' ')) for el in selected_els]
 
     if args.json or args.json_lines:
         selected_els = [json.dumps(str(el_text)) for el_text in selected_els]

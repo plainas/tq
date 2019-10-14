@@ -1,3 +1,5 @@
+[![Travis build status](https://travis-ci.org/plainas/tq.svg?branch=master)](https://travis-ci.org/plainas/tq)
+
 # tq
 
 tq is command line utility  that performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
