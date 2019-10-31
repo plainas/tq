@@ -1,0 +1,3 @@
+[MESSAGES CONTROL]
+disable = bad-whitespace, fixme, invalid-name, missing-docstring, wrong-import-order
+max-line-length = 150
