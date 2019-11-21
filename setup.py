@@ -2,11 +2,9 @@
 
 from distutils.core import setup
 
-from tq import VERSION
-
 setup(
     name='tq',
-    version=VERSION,
+    version='0.2.1',
     description='Comand line css selector over HTML',
     author='Pedro',
     author_email='pedroghcode@gmail.com',
