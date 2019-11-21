@@ -18,7 +18,7 @@ import json
 import codecs
 import io
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 
 def main(argv=None):
