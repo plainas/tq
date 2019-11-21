@@ -13,6 +13,6 @@ jobs:
         python-version: 3.7
     - name: Install
       run: |
-        pip install --user .
+        pip install .
     - name: Run tests
       run: ./tqtest.sh
