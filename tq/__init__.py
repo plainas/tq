@@ -20,9 +20,7 @@ import io
 import pkg_resources
 
 
-
-
-VERSION = pkg_resources.get_distribution('pip').version
+VERSION = pkg_resources.get_distribution('tq').version
 
 
 def main(argv=None):
