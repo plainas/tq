@@ -17,8 +17,12 @@ import argparse
 import json
 import codecs
 import io
+import pkg_resources
 
-VERSION = "0.2.1"
+
+
+
+VERSION = pkg_resources.get_distribution('pip').version
 
 
 def main(argv=None):
