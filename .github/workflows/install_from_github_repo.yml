@@ -1,0 +1,19 @@
+name: install from github rrepo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run:
+        sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
+    - name: run tq
+      run: |
+        tq
+        tq -v

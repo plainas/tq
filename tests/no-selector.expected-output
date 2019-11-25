@@ -1,0 +1,2 @@
+usage: tq [-h] [-t] [-q] [-s] [-j] [-J] [-v] [-a ATTR] [-p] [selector]
+tq: error: the following arguments are required: selector

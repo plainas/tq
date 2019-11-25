@@ -2,4 +2,6 @@ __pycache__/
 MANIFEST
 build/
 dist/
-
+*.pyc
+*.egg-info/
+*.actual-output
