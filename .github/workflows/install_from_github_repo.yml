@@ -1,4 +1,4 @@
-name: install from github rrepo
+name: Install from github zipball (stable branch)
 
 on: [push]
 
@@ -10,10 +10,14 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install dependencies
-      run:
-        sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
-    - name: run tq
+    - name: Install tq
       run: |
-        tq
+        sudo apt-get install python3-setuptools
+        sudo -H pip3 install --upgrade pip
+        sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
+    - name: Run tq
+      run: |
+        echo "ok, which version are we at...."
         tq -v
+        echo "Let's check what's on hacker news today"
+        curl https://news.ycombinator.com/news | tq -tj ".title a"

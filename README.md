@@ -4,15 +4,12 @@
 
 tq is command line utility  that performs an HTML element selection on HTML content passed to the stdin. Using css selectors that everybody knows.
 
-Since input comes from stdin and output is sent to stdout. It can easily be used inside traditional UNIX pipelines to extract content from webpages and html files.
+Since input comes from stdin and output is sent to stdout, it can easily be used inside traditional UNIX pipelines to extract content from webpages and html files.
 
 tq provides extra formating options such as json-encoding or newlines squashing, so it can play nicely with everyones favourite command line tooling.
 
 
 ## Installation
-
-	# Other versions of html5lib will not work
-	sudo pip3 install --upgrade html5lib==1.0b8
 
 	sudo pip3 install https://github.com/plainas/tq/zipball/stable
 
