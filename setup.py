@@ -11,7 +11,10 @@ setup(
     url='https://github.com/plainas/tq',
     packages= ['tq'],
     scripts=['bin/tq'],
-    install_requires=['beautifulsoup4>=4.8.1'],
+    install_requires=[
+        'beautifulsoup4==4.8.1',
+        'setuptools==39.0.1'
+        ],
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
