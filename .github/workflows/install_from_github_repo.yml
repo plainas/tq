@@ -12,8 +12,8 @@ jobs:
         python-version: 3.7
     - name: Install tq
       run: |
-        sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
         sudo -H pip3 install --upgrade pip
+        sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
     - name: run tq
       run: |
         tq
