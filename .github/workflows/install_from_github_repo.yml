@@ -15,7 +15,5 @@ jobs:
         sudo apt-get install python3-setuptools
         sudo -H pip3 install --upgrade pip
         sudo -H pip3 install https://github.com/plainas/tq/zipball/stable
-    - name: run tq
-      run: |
-        tq
-        tq -v
+    - name: run tests
+      run: ./tqtest.sh
