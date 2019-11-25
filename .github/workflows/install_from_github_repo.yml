@@ -11,8 +11,7 @@ jobs:
       with:
         python-version: 3.7
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
+      run:
         sudo pip3 install https://github.com/plainas/tq/zipball/stable
     - name: run tq
       run: |
