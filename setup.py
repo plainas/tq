@@ -13,7 +13,7 @@ setup(
     scripts=['bin/tq'],
     install_requires=[
         'beautifulsoup4==4.8.1',
-        'setuptools==39.0.1'
+        'setuptools==65.5.1'
         ],
     classifiers=[
         'License :: OSI Approved :: MIT License',
